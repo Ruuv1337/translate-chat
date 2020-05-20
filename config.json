@@ -1,0 +1,11 @@
+{
+    "version": 1,
+    "data": {
+        "enabled": true,
+        "fromLang": "en",
+        "toLang": "ru",
+        "sendMode": true,
+        "sendLang": "en",
+        "latinize": false
+    }
+}

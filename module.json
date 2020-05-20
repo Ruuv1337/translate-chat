@@ -1,0 +1,16 @@
+{
+  "disableAutoUpdate": false,
+  "name": "TRANSLATER",
+  "author": "[object Object] & teralove",
+  "version": "1.0",
+  "description": "Translates incoming and outgoing messages to another language using Google Translate.",
+  "options": {
+    "niceName": "TRANSLATER",
+    "settingsVersion": 1,
+    "settingsFile": "config.json",
+    "settingsMigrator": "setting_migration.js"
+  },
+  "servers": [
+    "https://raw.githubusercontent.com/Ruuv1337/translate-chat/reload"
+  ]
+}
