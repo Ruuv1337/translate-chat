@@ -12,41 +12,28 @@ translates incoming chat text into another language
 - Translations take a second to process so if chat is getting spammed then incoming translated text may be out of order.
 
 ## Usage
-### `translate`
+### `tr`
 - Toggle off/on
 - Default is on
 
-### `translate source (language)`
+### `tr from (language)`
 - sets the source language. Default: any
 
-### `translate target (language)`
+### `tr to (language)`
 - sets the target language. Default: en
 
-### `translate send (language)`
+### `tr send (language)`
 - Use this to translate outgoing messages into another language.
 
 ## Changelog
 <details>
-
-    1.5 (by Haku)
-    - Added Send Mode
-    1.4 (by Haku)
-    - Autoupdate + new commands
-    1.3
-    - Renamed dependencies folder into node_modules
-    1.2
-    - Fix: Whispers and private chat not working.
-    1.1
-    - included missing dependencies
-    - removed trailing whitespaces which was causing unnecessary messages being received.
     1.0
-    - initial release
-
+    - reload release
 </details>
 
 # Credits
 - Original mod by teralove
-
+- Fix by [object Object]
 ---
 
 ![Screenshot](https://i.imgur.com/JPngjxU.jpg)
