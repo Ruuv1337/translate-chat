@@ -1,4 +1,4 @@
-const VAILABLE_LANGUAGES = ['af', 'sq', 'ar', 'az', 'eu', 'bn', 'be', 'bg', 'ca', 'zh-CN', 'zh-TW', 'hr', 'cs', 'da', 'nl', 'en', 'eo', 'et', 'tl', 'fi', 'fr', 'gl', 'ka', 'de', 'el', 'gu', 'ht', 'iw', 'hi', 'hu', 'is', 'id', 'ga', 'it', 'ja', 'kn', 'ko', 'la', 'lv', 'lt', 'mk', 'ms', 'mt', 'no', 'fa', 'pl', 'pt', 'ro', 'ru', 'sr', 'sk', 'sl', 'es', 'sw', 'sv', 'ta', 'te', 'th', 'tr', 'uk', 'ur', 'vi', 'cy', 'yi', 'auto'];
+const AVAILABLE_LANGUAGES = ['af', 'sq', 'ar', 'az', 'eu', 'bn', 'be', 'bg', 'ca', 'zh-CN', 'zh-TW', 'hr', 'cs', 'da', 'nl', 'en', 'eo', 'et', 'tl', 'fi', 'fr', 'gl', 'ka', 'de', 'el', 'gu', 'ht', 'iw', 'hi', 'hu', 'is', 'id', 'ga', 'it', 'ja', 'kn', 'ko', 'la', 'lv', 'lt', 'mk', 'ms', 'mt', 'no', 'fa', 'pl', 'pt', 'ro', 'ru', 'sr', 'sk', 'sl', 'es', 'sw', 'sv', 'ta', 'te', 'th', 'tr', 'uk', 'ur', 'vi', 'cy', 'yi', 'auto'];
 const translate = require('google-translate-api');
 const { normalize } = require('./normalize');
 const latinize = (str) => {
@@ -27,7 +27,8 @@ module.exports = class Translator {
       if (this.mod.game.me.is(event.gameId)) return;
 
       const translated = await this.translate(event.message, this.mod.settings.fromLang, this.mod.settings.toLang );
-      if (!translated) return;
+      if (!translated || translated.from.language.iso == this.mod.settings.toLang) return;
+      
 
       this.mod.send(packet, version, { ...event, message: translated.text, name: event.name + ' (Translated)' });
     };
@@ -71,6 +72,7 @@ module.exports = class Translator {
   
     if (translated === sanitized) return;
     if (this.mod.settings.latinize) return latinize(translated);
+    
     return translated;
   }
 

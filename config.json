@@ -4,7 +4,7 @@
         "enabled": true,
         "fromLang": "en",
         "toLang": "ru",
-        "sendMode": true,
+        "sendMode": false,
         "sendLang": "en",
         "latinize": false
     }
